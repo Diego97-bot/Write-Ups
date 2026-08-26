@@ -63,12 +63,16 @@ Una vez realizado el scaneo podemos comprobar que tenemos 2 puertos abiertos.<br
 | 22/tcp | abierto | SSH |
 | 80/tcp | abierto | HTTP (Apache2, Debian) |
 
-Accedemos al navegador y realizamos la busqueda de la IP 172.17.0.2<br>
+Accedemos al navegador y realizamos la busqueda de la <code>IP 172.17.0.2</code><br>
 
 <img width="1918" height="732" alt="imagen" src="https://github.com/user-attachments/assets/ec4ac974-09fd-44ff-ab5e-be10adad5ebb" /><br>
 
 
 Comprobamos que es una pagina donde hay un servicio de apache en funcionamiento
+
+# Fase de enumeración
+En esta fase vamos a obtener rutas,direcciones y/o directorios que esten relacionadas con <code>IP 172.17.0.2</code><br>
+Para ellos usaremos la herramienta <code><b>gobuster</b></code>
 
 
 

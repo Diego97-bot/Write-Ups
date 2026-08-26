@@ -170,7 +170,7 @@ Una vez ejecutado volvemos a la terminal y vemos que ha cambiado, ejecutamos <co
 
 <img width="455" height="91" alt="imagen" src="https://github.com/user-attachments/assets/c6fede60-0bef-4fca-97fc-b52aa60dc5af" />
 
-
+# ¡RETO TERMINADO, HEMOS CONSEGUIDO INFILTRARNOS!
 
 
 

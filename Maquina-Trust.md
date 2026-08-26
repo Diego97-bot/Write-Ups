@@ -71,7 +71,7 @@ Accedemos al navegador y realizamos la busqueda de la <code>IP 172.17.0.2</code>
 Comprobamos que es una pagina donde hay un servicio de apache en funcionamiento
 
 # Fase de enumeración
-En esta fase vamos a obtener rutas,direcciones y/o directorios que esten relacionadas con <code>IP 172.17.0.2</code><br>
+En esta fase vamos a obtener rutas,direcciones,directorios,archivos...etc que esten relacionadas con <code>IP 172.17.0.2</code><br>
 Para ellos usaremos la herramienta <code><b>gobuster</b></code> con el siguiente comando:<br>
 
 ```bash
@@ -88,6 +88,18 @@ Para ellos usaremos la herramienta <code><b>gobuster</b></code> con el siguiente
 - --exclude-length 10701: Ignora y oculta las respuestas de la página cuya longitud en bytes sea exactamente 10701 (muy útil para filtrar páginas falsas de error 404/200 personalizadas que ensucian el resultado).
 
 - -t 50: Establece 50 hilos concurrentes para acelerar la velocidad del escaneo.
+
+<img width="1352" height="404" alt="imagen" src="https://github.com/user-attachments/assets/f2348048-68df-4a11-8c22-66222cf19b58" />
+
+Una vez terminado el escaneo podemos ver que ha econtrado un archivo llamado <code><b>secret.php</b></code><br>
+
+Accedemos a la siguiente ruta a ver que nos muestra el fichero <code>http://172.17.0.2/secret.php</code><br>
+
+<img width="1920" height="702" alt="imagen" src="https://github.com/user-attachments/assets/ffa1052c-cdfe-4775-9cb9-5b2a4d298381" />
+
+Nos muestra un mensaje el cual nos da una pista, puede que el usuario que necesitamos sea <b>Mario</b><br>
+
+
 
 
 

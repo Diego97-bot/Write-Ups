@@ -101,7 +101,7 @@ Nos muestra un mensaje el cual nos da una pista, puede que el usuario que necesi
 
 # Ataque de fuerza bruta
 
-Una vez obtenido el usuario necesitamos la pass del usuario para ello usaremos la "fuerza bruta" con la herramienta <code></b>Hydra</b></code> junto a un diccionario de posibles claves <code></b>Rockyou.txt/b></code> 
+Una vez obtenido el usuario necesitamos la pass del usuario para ello usaremos la "fuerza bruta" con la herramienta <code><b>Hydra</b></code> junto a un diccionario de posibles claves <code><b>Rockyou.txt</b></code> 
 
 
 

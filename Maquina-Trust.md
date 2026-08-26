@@ -99,6 +99,10 @@ Accedemos a la siguiente ruta a ver que nos muestra el fichero <code>http://172.
 
 Nos muestra un mensaje el cual nos da una pista, puede que el usuario que necesitamos sea <b>Mario</b><br>
 
+# Ataque de fuerza bruta
+
+Una vez obtenido el usuario necesitamos la pass del usuario para ello usaremos la "fuerza bruta" con la herramienta <code></b>Hydra</b></code> junto a un diccionario de posibles claves <code></b>Rockyou.txt/b></code> 
+
 
 
 

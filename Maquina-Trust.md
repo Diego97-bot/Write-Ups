@@ -147,17 +147,29 @@ Vemos que podemos ejecutar el binario <code>vim</code> que es un editor de texto
 
 <img width="956" height="143" alt="imagen" src="https://github.com/user-attachments/assets/00330344-2a7e-464d-971b-40689d69d664" />
 
-para obtener los permisos de <code>root</code> ejecutamos bin como modo <code>root</code><br>
+para obtener los permisos de <code>root</code> ejecutamos vim como modo <code>root</code><br>
 
 ```bash
 sudo -u root /usr/bin/vim
 ```
+- -u: Usuario<br>
+
 <img width="1914" height="669" alt="imagen" src="https://github.com/user-attachments/assets/b68cf1c0-7584-4f6c-8817-cb86df49f5d8" />
 
 Una vez dentro del editor escribimos los siguiente<br>
 ```bash
 :!/bin/bash
 ```
+Esto nos permite salir de vim pero manteniendo los privilegios con los que lo hemos ejecutado es decir con permisos de root
+
+<img width="1304" height="391" alt="imagen" src="https://github.com/user-attachments/assets/bd5c795f-eebb-4a6f-abc0-d11244faadec" />
+
+Una vez ejecutado volvemos a la terminal y vemos que ha cambiado, ejecutamos <code>whoami</code> y podemos ver que somos el usuario root.
+
+<img width="455" height="91" alt="imagen" src="https://github.com/user-attachments/assets/c6fede60-0bef-4fca-97fc-b52aa60dc5af" />
+
+
+
 
 
 

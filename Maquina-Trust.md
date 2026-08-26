@@ -101,7 +101,68 @@ Nos muestra un mensaje el cual nos da una pista, puede que el usuario que necesi
 
 # Ataque de fuerza bruta
 
-Una vez obtenido el usuario necesitamos la pass del usuario para ello usaremos la "fuerza bruta" con la herramienta <code><b>Hydra</b></code> junto a un diccionario de posibles claves <code><b>Rockyou.txt</b></code> 
+Una vez obtenido el usuario necesitamos la pass del usuario para ello usaremos la "fuerza bruta" con la herramienta <code><b>Hydra</b></code> junto a un diccionario de posibles claves <code><b>Rockyou.txt</b></code><br> 
+
+```bash
+hydra -l mario -P rockyou.txt ssh://172.17.0.2 -v
+```
+ - hydra: Invoca la herramienta de pruebas de autenticación.
+
+ - -l mario: Define un nombre de usuario único y fijo (mario) para la prueba. (Nota: Si fuera en mayúscula -L, indicaría un archivo con una lista de usuarios).
+
+- -P rockyou.txt: Especifica el diccionario de contraseñas que se va a probar (en este caso, la famosa lista rockyou.txt).
+
+- ssh://172.17.0.2: Establece el protocolo (SSH) y la dirección IP del objetivo.
+
+- -v: Activa el modo detallado (verbose), mostrando en pantalla cada intento de combinación en tiempo real.
+
+Una vez ejecutado el comando probara las posibles claves del usuario
+
+<img width="794" height="449" alt="imagen" src="https://github.com/user-attachments/assets/d417b2f8-784d-4009-a8e6-2afebd065666" />
+
+En este caso la contraseña que ha encontrado es <code><b>chocolate</b></code>
+
+# Intrusión y elevación de permisos
+
+Una vez obtenido el usuario y la contraseña podemos realizar la conexion mediante el protocolo <code>SSH</code><br>
+
+```bash
+ssh mario@172.17.0.2
+```
+Debemos responder <code><b>yes</b></code> a la siguiente pregunta <code>Are you sure you want to continue connecting (yes/no/[fingerprint])?</code><br>
+introducimos la contraseña <code><b>chocolate</b></code><br>
+
+<img width="849" height="313" alt="imagen" src="https://github.com/user-attachments/assets/be62f201-7b11-49c8-a59e-68e9ead6b9e3" />
+
+Ya estamos dentro de la maquina de Mario, podemos comprobar que somos Mario con el comando:
+
+```bash
+whoami
+```
+Ahora comprobamos que puedo ejecutar como <code>root</code><br>
+```bash
+sudo -l
+```
+Vemos que podemos ejecutar el binario <code>vim</code> que es un editor de texto como <code>root</code><br>
+
+<img width="956" height="143" alt="imagen" src="https://github.com/user-attachments/assets/00330344-2a7e-464d-971b-40689d69d664" />
+
+para obtener los permisos de <code>root</code> ejecutamos bin como modo <code>root</code><br>
+
+```bash
+sudo -u root /usr/bin/vim
+```
+<img width="1914" height="669" alt="imagen" src="https://github.com/user-attachments/assets/b68cf1c0-7584-4f6c-8817-cb86df49f5d8" />
+
+Una vez dentro del editor escribimos los siguiente<br>
+```bash
+:!/bin/bash
+```
+
+
+
+
+
 
 
 

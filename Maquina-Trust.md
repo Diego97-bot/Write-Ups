@@ -72,7 +72,23 @@ Comprobamos que es una pagina donde hay un servicio de apache en funcionamiento
 
 # Fase de enumeración
 En esta fase vamos a obtener rutas,direcciones y/o directorios que esten relacionadas con <code>IP 172.17.0.2</code><br>
-Para ellos usaremos la herramienta <code><b>gobuster</b></code>
+Para ellos usaremos la herramienta <code><b>gobuster</b></code> con el siguiente comando:<br>
+
+```bash
+ gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-small.txt -u http://172.17.0.2 -x txt,php,sql,py --exclude-length 10701 -t 50 
+```
+- gobuster dir: Activa el modo de escaneo de directorios y archivos web.
+
+- -w /usr/.../directory-list-lowercase-2.3-small.txt: Define el diccionario de nombres de carpetas/archivos a probar (en este caso, la lista corta en minúsculas de Dirbuster).
+
+- -u http://172.17.0.2: Especifica la URL objetivo a escanear.
+
+- -x txt,php,sql,py: Busca archivos probando esas extensiones específicas al final de cada palabra del diccionario (ejemplo: admin.php, config.txt, db.sql).
+
+- --exclude-length 10701: Ignora y oculta las respuestas de la página cuya longitud en bytes sea exactamente 10701 (muy útil para filtrar páginas falsas de error 404/200 personalizadas que ensucian el resultado).
+
+- -t 50: Establece 50 hilos concurrentes para acelerar la velocidad del escaneo.
+
 
 
 

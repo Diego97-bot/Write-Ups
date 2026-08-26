@@ -11,9 +11,62 @@
 
 Para desplegar esta maquina debemos extraer el contenido del zip descargado,<br>
 una vez descomprimido el zip, deberemos abrir una terminal en la carpeta de la maquina.<br>
-Ejecutamos el siguiente comando <code>sudo bash auto_deploy.sh trust.tar</code><br>
+Ejecutamos el siguiente comando: <br>
+
+```bash
+auto_deploy.sh trust.tar
+```
 
 <img width="925" height="471" alt="imagen" src="https://github.com/user-attachments/assets/37a73f19-42ee-4d8c-9948-3b1a625753c9" />
+
+Se ha desplegado nuestra maquina con la siguiente <code>IP <b>172.17.0.2</b></code>
+
+# Fase de escaneo.
+
+Como primera toma de contacto para cualquier maquina vamos a realizar ping:
+```bash
+ping -c 2 172.17.0.2
+```
+- -c: Establecemos el numero de veces que realiza el ping en este caso 2.<br>
+
+<img width="543" height="201" alt="imagen" src="https://github.com/user-attachments/assets/bd43a7e8-45df-4e21-8bb6-3967f4edf363" />
+
+Una vez comprabada la conexión procedemos a escanear la maquina, para ello usaremos la herramienta <b>Nmap</b><br>
+para realizar el escaneo usarmeos el siguiente comando: <br> 
+```bash
+sudo nmap -p- -sS  -sC --min-rate 5000 -n -vvv -Pn 172.17.0.2 -oN escaneo 
+```
+- -p-: Escaneo de la totalidad de los puertos TCP (1-65535).
+
+- -sS: Escaneo silencioso tipo TCP SYN (conexión semiabierta).
+
+- -sC: Ejecución de scripts por defecto para fingerprinting y detección básica de vulnerabilidades.
+
+- --min-rate 5000: Envío mínimo de 5,000 paquetes/seg para acelerar la ráfaga de escaneo.
+
+- -n: Desactivación de la resolución DNS para optimizar tiempo.
+
+- -Pn: Omisión de descubrimiento de host (asume que el objetivo está activo).
+
+- -vvv: Salida detallada en tiempo real.
+
+- -oN escaneo: Guardado de resultados en texto plano en el archivo escaneo.<br>
+
+<img width="1031" height="87" alt="imagen" src="https://github.com/user-attachments/assets/745f2f34-a4a5-4d64-86eb-5551c73ae146" />
+
+Una vez realizado el scaneo podemos comprobar que tenemos 2 puertos abiertos.<br>
+
+<img width="1395" height="217" alt="imagen" src="https://github.com/user-attachments/assets/e4028179-bc8a-4021-8f32-60188565963b" />
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -139,10 +139,12 @@ Ya estamos dentro de la maquina de Mario, podemos comprobar que somos Mario con 
 ```bash
 whoami
 ```
-Ahora comprobamos que puedo ejecutar como <code>root</code><br>
+Ahora comprobamos que puedo ejecutar como <code>sudo</code><br>
 ```bash
 sudo -l
 ```
+- -l: Lista los procesos/binarios que puedo ejecutar como super usuario
+
 Vemos que podemos ejecutar el binario <code>vim</code> que es un editor de texto como <code>root</code><br>
 
 <img width="956" height="143" alt="imagen" src="https://github.com/user-attachments/assets/00330344-2a7e-464d-971b-40689d69d664" />
